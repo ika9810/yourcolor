@@ -20,9 +20,9 @@
     <meta property="og:title" content="너의 퍼스널 컬러는" />
     <meta property="og:description" content="나는 웜톤일까? 쿨톤일까? AI로 진단하는 나만의 퍼스널 컬러! 퍼스널 컬러를 진단받고 어울리는 컬러,화장품,패션을 추천받으세요"
     />
-    <meta property="og:image" content="https://raw.githubusercontent.com/ika9810/Beef-NFT/main/img/beef-icon/beef_thumbnail_kakao.png" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/lchyeon0123/yourcolor/main/img/Screenshots/og-image.png" />
     <link rel="shortcut icon" href="./img/meat.ico" type="image/x-icon">
-    <link rel="icon" href="./img/meat.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61e2f8f2e956ed9f"></script>
@@ -32,7 +32,7 @@
     <!-- <script src="script.js" defer></script> -->
     <nav class="p-3 container navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#" onclick="window.location.reload();">너의 퍼스널 컬러는</a>
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -50,7 +50,7 @@
                 </li>
             </ul>
             
-        </div> -->
+        </div>
     </nav>
     <section class="section">
         <h1 class="title" onclick="test2();">너의 퍼스널 컬러는</h1>
@@ -58,10 +58,10 @@
         <h2 class="subtitle">인공지능이 당신의 얼굴 사진을 분석하여 퍼스널 컬러를 진단합니다!</h2>
     </section>
     <section class="youtube pb-3" id="yotube-mid-link">
-        <!-- <div class="container mt-3 youtube-cover d-flex flex-row-reverse align-items-center">
+        <div class="container mt-3 youtube-cover d-flex flex-row-reverse align-items-center">
             <img src="img/github.png" alt="youtube-icon" class="youtube-icon">
             <a href="https://github.com/lchyeon0123/yourcolor" class="youtube-link">By 로보틱스 총무 듀오 이종헌, 이채현 </a>
-        </div> -->
+        </div>
     </section>
     <!-- sr-only class로 남자 여자를 선택하는 토글을 우선적으로 안보이게 설정하였다. 추후 소고기 이외의 돼지고기등이 추가가 되면 sr-only 클래스를 삭제하면 다시 나타나게 된다. -->
     <h3 class="sr-only pb-2 d-flex justify-content-center">성별을 선택하세요</h3>
@@ -100,9 +100,12 @@
             <p class="result-message"></p>
             <div id="label-container" class="d-flex flex-column justify-content-around"></div>
         
-            <!-- <div class="addthis_inline_share_toolbox"></div> -->
+            <div class="addthis_inline_share_toolbox"></div>
 
             <div class="pt-3 image-title-wrap">
+                <button type="button p-2" class="color-btn" onclick="test();">
+                    <span class="try-again-text">컬러 상세보기</span>
+                </button>
                 <button type="button p-2" class="try-again-btn" onclick="window.location.reload();">
                     <span class="try-again-text">다른 사진으로 재시도</span>
                 </button>
@@ -111,8 +114,7 @@
     </div>
     <footer class="footer pt-5 container d-flex justify-content-center">
         <div>
-            <!-- <p>&copy; 이종헌, 이채현 Robotics Hackathon 2022. All Rights Reserved. </p> -->
-            <p>&copy; SSU Robotics 2022. All Rights Reserved. </p>
+            <p>&copy; 이종헌, 이채현 Robotics Hackathon 2022. All Rights Reserved. </p>
         </div>
     </footer>
     <script>
@@ -293,27 +295,23 @@
             }
         }
         async function test(){
-            $('#nft-loading').show();
-            const img = $('.file-upload-image').attr('src');
-            const grade = $('#meat-grade').text();
-            const data = {"grade" : grade,"img": img}
-            //https://xiubindev.tistory.com/115 참고 CORS 문제 해결 방법
-            //const resp = await axios.post('https://cors-anywhere.herokuapp.com/http://54.180.145.244:58282/', data)
-            const resp = await axios.post('https://beef-flask.herokuapp.com/nftMint', data)
-            //const resp = await axios.post('http://127.0.0.1:5000//nftMint', data)
-            .then(function (response) {
-                // NFT 발급시 나타나는 로딩중 요소를 숨긴다. 신기하게 alert 전에 넣어놨지만 소용이 없었다(hide 적용 x) 페이지가 이동하기 전에는 hide가 잘 적용된다
-                $('#nft-loading').hide();
-                // 단순히 alert(response)만 찍으면 [Object object]형태로만 반환한다. 아래와 같은 형태로 호출해야한다.
-                //alert(JSON.stringify(response));
-                console.log(response);
-                alert("NFT 발행이 완료되었습니다!");
-                //klaytn baobab scope 사이트로 이동
-                window.location.href = "https://baobab.scope.klaytn.com/tx/" + response["data"]["transactionHash"]+ "?tabId=nftTransfer"
-            })
-            .catch(function (error) {
-                alert(error);
-            });
+            
+            const grade = $('#color-grade').text();
+            console.log('clicked',grade.split('\"'))
+            let oopyURL;
+            if (grade.split('\"')[1] == '봄 웜톤'){
+                oopyURL = "spring"
+            }
+            else if (grade.split('\"')[1] == '여름 쿨톤'){
+                oopyURL = "summer"
+            }
+            else if (grade.split('\"')[1] == '겨울 쿨톤'){
+                oopyURL = "winterj"
+            }
+            else{
+                oopyURL = "fall"
+            }
+            window.location.href = "https://" + oopyURL+ ".oopy.io"
         }
     </script>
     <script>
