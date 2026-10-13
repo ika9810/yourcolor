@@ -60,7 +60,9 @@ async function main() {
   fs.writeFileSync(output('android/release-assets/store-icon.svg'), iconSvg);
   fs.writeFileSync(output('docs/favicon.svg'), faviconSvg);
   fs.writeFileSync(output('android/release-assets/feature-graphic.svg'), featureSvg);
-  await sharp(Buffer.from(iconSvg)).png().flatten({ background: '#f7f7fa' }).toFile(output('android/release-assets/store-icon.png'));
+  // Play requires a 32-bit PNG. The background is drawn inside the SVG, so
+  // retaining an opaque alpha channel changes no visible pixels.
+  await sharp(Buffer.from(iconSvg)).png().toFile(output('android/release-assets/store-icon.png'));
   const feature = await sharp(Buffer.from(featureSvg)).png().flatten({ background: '#f7f7fa' }).toBuffer();
   fs.writeFileSync(output('android/release-assets/feature-graphic.png'), feature);
   fs.writeFileSync(output('docs/assets/og-image.png'), feature);
