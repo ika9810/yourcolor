@@ -10,12 +10,14 @@ v4 디자인 시안을 옮긴 Kotlin 네이티브 앱입니다. WebView와 백�
 
 JDK 17, SDK Platform 36, Build Tools 35.0.0을 사용합니다. Gradle daemon JVM 설정은 포함돼 있고, `local.properties`와 서명 파일은 Git에서 제외합니다. LG V20 실기기 시험은 기기를 확보한 뒤 선택적으로 진행합니다.
 
-기존 Play 앱 `com.robotics.yourcolor`의 프로덕션 버전 코드는 1이고 Play App Signing을 사용합니다. 새 앱의 버전 이름은 `2.0.0`입니다. 코드 2·3 AAB는 새 업로드 키로 Play 내부 테스트 초안에 접수됐지만 출시하지 않았습니다. 코드 3에서 발견된 API 24 홈 버튼 잘림을 수정하고 코드 4를 다음 후보로 검증 중입니다. 업로드 키 사용 대기는 끝났고 Play의 Android 개발자 인증은 **등록됨 / 소유권 확인됨**으로 표시됩니다. 키 설정은 Git에서 제외한 `keystore.properties`에 있으며 형식은 `keystore.properties.example`을 참고하세요. 설정 파일이 없으면 릴리스 빌드는 서명 없이 생성됩니다.
+기존 Play 앱 `com.robotics.yourcolor`는 Play App Signing을 사용합니다. 업데이트 `versionCode=4`, `versionName=2.0.0`은 2026-10-13 사용자 승인에 따라 **프로덕션에 게시됐습니다.** Play 대시보드는 `활성 / 최신 출시 버전 4 (2.0.0)`, 177개 국가/지역으로 표시하고 출시 탭은 `Google Play에 제공됨`으로 표시합니다. 코드 3에서 발견된 API 24 홈 버튼 잘림은 코드 4에서 수정했습니다. 업로드 키 사용 대기는 끝났고 Play의 Android 개발자 인증은 **등록됨 / 소유권 확인됨**으로 표시됩니다. 키 설정은 Git에서 제외한 `keystore.properties`에 있으며 형식은 `keystore.properties.example`을 참고하세요. 설정 파일이 없으면 릴리스 빌드는 서명 없이 생성됩니다.
+
+현재 소스의 다음 후보는 `versionCode=6`, `versionName=2.0.2`입니다. 코드 5(2.0.1)는 Play에 업로드됐지만 비활성 상태여서 코드 6을 사용합니다. 코드 6의 서명된 릴리스 AAB·APK를 만들고 버전·서명·번들 내용을 확인했습니다. Play는 코드 6 AAB를 접수했고, 프로덕션 100% 출시와 등록정보를 포함한 변경사항 8건은 **Google 검토 중**입니다. 관리형 게시를 꺼서 승인되면 자동 게시되도록 설정했습니다. 현재 공개 프로덕션 버전은 코드 4입니다.
 
 - 설치 파일: `app/build/outputs/apk/debug/app-debug.apk`
 - 개발 패키지: `com.robotics.yourcolor.dev` — 기존 앱과 함께 설치할 수 있습니다.
 - 기본 패키지: `com.robotics.yourcolor`, minSdk 24(Android 7.0), target/compileSdk 36.
-- ARM64 / ARMv7를 포함합니다. debug APK는 약 59 MiB입니다. 최종 후보를 만들 때 릴리스 APK·AAB의 서명, 버전 코드 및 계정별 `adi-registration.properties` 부재를 다시 확인합니다.
+- ARM64 / ARMv7를 포함합니다. debug APK는 약 59 MiB입니다. 코드 6 릴리스 APK·AAB를 빌드했고, 계정별 `adi-registration.properties`가 번들에 없음을 확인했습니다. 코드 4 공개 이력과 코드 6 후보의 서명·아티팩트 해시는 [출시 준비 기록](release/RELEASE_CHECKLIST.md)에 있습니다.
 
 ## 반영한 디자인과 조작
 
@@ -64,4 +66,4 @@ ANDROID_SERIAL=emulator-5554 ./gradlew :app:connectedDebugAndroidTest
 python3 tools/validate_profiles.py emulator-5554
 ```
 
-검증 결과와 실기기 확인이 필요한 범위는 [검증 기록](../document/android-validation.md)을 확인하세요. 에뮬레이터의 해상도를 맞추는 것은 Samsung One UI, LG 펌웨어, 실제 칩셋 속도 검증과 다릅니다. 새 앱은 아직 프로덕션에 공개되지 않았습니다.
+검증 결과와 실기기 확인이 필요한 범위는 [검증 기록](../document/android-validation.md)을 확인하세요. 에뮬레이터의 해상도를 맞추는 것은 Samsung One UI, LG 펌웨어, 실제 칩셋 속도 검증과 다릅니다. 코드 6 게시 후 정책 경고·공개 스토어 표기·사전 출시 보고서의 상태는 [출시 기록](release/RELEASE_CHECKLIST.md)의 확인 항목을 따릅니다.
