@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const sharp = require('sharp');
 const { createCanvas, GlobalFonts, loadImage } = require('@napi-rs/canvas');
+const renderDramaticBloom = require('./render-dramatic-bloom.cjs');
 
 const root = path.resolve(__dirname, '..');
 GlobalFonts.registerFromPath(path.join(root, 'android/app/src/main/assets/fonts/WantedSansExtraBold.ttf'), 'WantedExtra');
@@ -23,34 +24,18 @@ function cover(image, x, y, width, height) {
   const sourceHeight = height / scale;
   ctx.drawImage(image, (image.width - sourceWidth) / 2, (image.height - sourceHeight) / 2, sourceWidth, sourceHeight, x, y, width, height);
 }
-function comparisonLabel(number, label, centerX) {
+function comparisonLabel(number, label, x, color) {
   ctx.save();
-  ctx.font = '700 16px PaperSemi';
-  const textWidth = ctx.measureText(label).width;
-  const badgeSize = 22;
-  const gap = 8;
-  const x = centerX - (badgeSize + gap + textWidth) / 2;
-
-  ctx.fillStyle = '#245EE8';
-  rounded(x, 29, badgeSize, badgeSize, 7);
-  ctx.fill();
-  ctx.fillStyle = '#FFFFFF';
+  ctx.fillStyle = color;
   ctx.font = '700 14px PaperSemi';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.fillText(number, x + badgeSize / 2, 40);
-
-  ctx.fillStyle = '#35465D';
-  ctx.font = '700 16px PaperSemi';
-  ctx.textAlign = 'left';
-  ctx.fillText(label, x + badgeSize + gap, 40);
+  ctx.fillText(`${number} ${label}`, x, 48);
   ctx.restore();
 }
 function comparison(original, edited) {
   const x = 536, y = 61, width = 442, height = 378;
   const originalWidth = 203;
-  comparisonLabel('1', '원본', x + originalWidth / 2);
-  comparisonLabel('2', 'pixel stretch', x + originalWidth + (width - originalWidth) / 2);
+  comparisonLabel('01', '원본', x + 3, '#35465D');
+  comparisonLabel('02', '색을 펼친 뒤', x + originalWidth + 3, '#245EE8');
   ctx.save();
   ctx.shadowColor = '#25508B35';
   ctx.shadowBlur = 24;
@@ -75,7 +60,7 @@ async function renderFeatureGraphic() {
   const trimmed = await sharp(path.join(root, 'branding/wordmark.png')).trim().png().toBuffer();
   const wordmark = await loadImage(trimmed);
   const original = await loadImage(path.join(root, 'android/app/src/main/assets/samples/electric-bloom.png'));
-  const edited = await loadImage(path.join(root, 'android/app/src/main/assets/samples/electric-bloom-art.png'));
+  const edited = await loadImage(await renderDramaticBloom());
 
   const background = ctx.createLinearGradient(0, 0, 1024, 500);
   background.addColorStop(0, '#FCFCFF');
