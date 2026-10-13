@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">yourcolor</string>
+    <string name="app_name">yourcolor - 나만의 pixel stretch</string>
     <string name="mask_hint">Purple shows the selected area.\nPaint with one finger; pinch and move with two fingers.</string>
     <string name="source_finish">Tap the photo to set the line · Done</string>
     <string name="change_start_line">Move start line</string>

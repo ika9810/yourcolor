@@ -1,12 +1,12 @@
-# yourcolor - 픽셀 스트레치
+# yourcolor - 나만의 pixel stretch
 
 <p align="center">
   <strong>너의 순간을, 조금 더 길게.</strong><br>
-  사진 속 색을 펼쳐 만드는 픽셀 스트레치 에디터
+  사진 속 색을 펼쳐 만드는 나만의 픽셀 스트레치.
 </p>
 
 <p align="center">
-  <img src="android/release-assets/feature-graphic.png" alt="yourcolor — 사진 속 색을 펼쳐 만드는 픽셀 스트레치" width="100%">
+  <img src="android/release-assets/feature-graphic.png" alt="yourcolor — 사진 속 색을 펼쳐 만드는 나만의 픽셀 스트레치" width="100%">
 </p>
 
 <p align="center"><a href="https://ika9810.github.io/yourcolor/"><strong>🌐 웹에서 바로 만들기 ↗</strong></a></p>

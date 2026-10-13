@@ -1,15 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="yourcolor 픽셀 스트레치 심볼">
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="yourcolor 픽셀 스트레치: 두 색의 리본">
   <defs>
-    <linearGradient id="photo" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#153C9C"/><stop offset=".55" stop-color="#2969E8"/><stop offset="1" stop-color="#9CC7F2"/></linearGradient>
-    <linearGradient id="left" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#245CD5"/><stop offset="1" stop-color="#173F9C"/></linearGradient>
-    <linearGradient id="right" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#91BDF0"/><stop offset="1" stop-color="#356DD0"/></linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2C6DF2"/>
+      <stop offset="1" stop-color="#1755DE"/>
+    </linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F1F8FF"/>
+    </linearGradient>
+    <linearGradient id="back" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#CDEBFF"/>
+      <stop offset="1" stop-color="#A6D2FF"/>
+    </linearGradient>
   </defs>
-  <rect x="103" y="113" width="306" height="135" rx="21" fill="url(#photo)"/>
-  <path d="M216 113h84l-33 135h-73z" fill="#2969E8" opacity=".88"/>
-  <path d="M320 113h69a20 20 0 0 1 20 20v94a20 20 0 0 1-20 20h-94z" fill="#83B7EC" opacity=".74"/>
-  <path d="M260 135h51l-20 91h-52z" fill="#F27041"/>
-  <rect x="103" y="240" width="91" height="126" fill="url(#left)"/>
-  <rect x="203" y="240" width="91" height="169" fill="#F27041"/>
-  <rect x="303" y="240" width="106" height="143" fill="url(#right)"/>
-  <path d="M109 259h78m22 0h79m21 0h94" stroke="#F7F7FA" opacity=".45" stroke-width="3"/>
+  <rect x="38" y="38" width="436" height="436" rx="114" fill="url(#blue)"/>
+  <path d="M280 119V235C280 304 382 289 382 383" fill="none" stroke="url(#back)" stroke-width="60"/>
+  <path d="M168 119V270C168 323 270 313 270 383" fill="none" stroke="url(#front)" stroke-width="60"/>
 </svg>

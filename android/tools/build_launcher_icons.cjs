@@ -26,18 +26,21 @@ async function main() {
     await sharp(storeIcon).resize(size, size, { fit: 'fill' }).png().toFile(path.join(directory, 'ic_launcher.png'));
   }
 
-  // Fit the visible symbol, rather than its canvas, inside the 66 dp safe zone
-  // of Android's 108 dp adaptive icon. This works for any transparent mark.
-  const { data: fitted, info: fittedInfo } = await sharp(mark).trim().resize(312, 312, {
-    fit: 'inside',
-  }).ensureAlpha().png().toBuffer({ resolveWithObject: true });
-  const left = Math.floor((512 - fittedInfo.width) / 2);
-  const top = Math.floor((512 - fittedInfo.height) / 2);
-  const foreground = await sharp(fitted).extend({
-    top,
-    bottom: 512 - fittedInfo.height - top,
-    left,
-    right: 512 - fittedInfo.width - left,
+  // Adaptive icons use a full blue background and transparent ribbons.
+  // Removing the mark's single rounded-square background keeps the ribbons
+  // inside the launcher mask and avoids a small square inside a larger circle.
+  const markSvg = fs.readFileSync(mark, 'utf8');
+  const roundedSquares = markSvg.match(/<rect\b[^>]*\/>/g) || [];
+  if (roundedSquares.length !== 1) {
+    throw new Error('Expected one rounded-square background in branding/mark.svg');
+  }
+  const foregroundSvg = markSvg.replace(roundedSquares[0], '');
+  const ribbons = await sharp(Buffer.from(foregroundSvg)).resize(480, 480).png().toBuffer();
+  const foreground = await sharp(ribbons).extend({
+    top: 16,
+    bottom: 16,
+    left: 16,
+    right: 16,
     background: { r: 0, g: 0, b: 0, alpha: 0 },
   }).ensureAlpha().png().toBuffer();
   const directory = path.join(res, 'drawable-nodpi');
