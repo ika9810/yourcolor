@@ -4,7 +4,6 @@ const fs = require('node:fs');
 const path = require('node:path');
 const sharp = require('sharp');
 const { createCanvas, GlobalFonts, loadImage } = require('@napi-rs/canvas');
-const renderDramaticBloom = require('./render-dramatic-bloom.cjs');
 
 const root = path.resolve(__dirname, '..');
 GlobalFonts.registerFromPath(path.join(root, 'android/app/src/main/assets/fonts/WantedSansExtraBold.ttf'), 'WantedExtra');
@@ -60,7 +59,7 @@ async function renderFeatureGraphic() {
   const trimmed = await sharp(path.join(root, 'branding/wordmark.png')).trim().png().toBuffer();
   const wordmark = await loadImage(trimmed);
   const original = await loadImage(path.join(root, 'android/app/src/main/assets/samples/electric-bloom.png'));
-  const edited = await loadImage(await renderDramaticBloom());
+  const edited = await loadImage(path.join(root, 'android/app/src/main/assets/samples/electric-bloom-art.png'));
 
   const background = ctx.createLinearGradient(0, 0, 1024, 500);
   background.addColorStop(0, '#FCFCFF');
