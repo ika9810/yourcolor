@@ -1,4 +1,4 @@
-# yourcolor
+# yourcolor - 픽셀 스트레치
 
 <p align="center">
   <strong>너의 순간을, 조금 더 길게.</strong><br>
@@ -33,13 +33,13 @@
 
 **웹:** [yourcolor 웹 에디터](https://ika9810.github.io/yourcolor/)에서 사진을 고르고 바로 편집하세요. 계정 없이 사용하며 사진은 브라우저에서 처리됩니다.
 
-**Android 개발 버전:** Android Studio에서 [`android/`](android) 폴더를 열고, Gradle 동기화 후 `app`을 실행하세요. Android 7.0 이상을 지원합니다. 개발 환경과 기능·검증 범위는 [Android 실행 안내](android/README.md)에 정리되어 있습니다.
+**Android:** [Google Play](https://play.google.com/store/apps/details?id=com.robotics.yourcolor)에서 설치할 수 있습니다. 소스에서 실행하려면 Android Studio에서 [`android/`](android) 폴더를 열고, Gradle 동기화 후 `app`을 실행하세요. Android 7.0 이상을 지원합니다.
 
 ## Google Play
 
-현재 [Google Play에 공개된 앱](https://play.google.com/store/apps/details?id=com.robotics.yourcolor)은 이전 퍼스널 컬러 진단 버전입니다. 이 README에서 소개한 픽셀 스트레치 앱은 아직 출시 준비 중입니다.
+사진 속 색을 펼쳐 작품을 만드는 Android 앱을 [Google Play](https://play.google.com/store/apps/details?id=com.robotics.yourcolor)에서 다운로드하세요.
 
-<a href="https://play.google.com/store/apps/details?id=com.robotics.yourcolor"><img src="img/google-play-badge-ko.png" alt="Google Play에서 기존 퍼스널 컬러 진단 앱 다운로드" height="56"></a>
+<a href="https://play.google.com/store/apps/details?id=com.robotics.yourcolor"><img src="img/google-play-badge-ko.png" alt="Google Play에서 yourcolor 픽셀 스트레치 앱 다운로드" height="56"></a>
 
 ## 히스토리
 

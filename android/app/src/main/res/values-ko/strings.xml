@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">YourColor</string>
+    <string name="app_name">yourcolor</string>
     <string name="mask_hint">보라색이 선택된 영역이에요.\n한 손가락으로 칠하고, 두 손가락으로 확대·이동하세요.</string>
     <string name="source_finish">사진을 눌러 선택 · 완료</string>
     <string name="change_start_line">시작선 바꾸기</string>

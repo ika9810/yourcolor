@@ -52,13 +52,14 @@ body{background:#f7f7f9;color:#202127}
 .skip-link{position:absolute;top:-80px;left:16px;z-index:100;background:#0866e9;color:#fff;padding:12px 18px;border-radius:12px}
 .skip-link:focus{top:12px}
 .site-header{max-width:1180px;margin:auto;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.brand{display:inline-flex;align-items:center;gap:9px;font-family:Wanted,Paperlogy,sans-serif;font-size:23px;letter-spacing:-1.3px}
-.brand-mark{width:24px;height:24px;border-radius:8px;background:linear-gradient(150deg,#5d35ba 2%,#e97869 46%,#f6b86c 77%,#6253b0);transform:rotate(-9deg);box-shadow:5px 5px 0 -2px #d7ddff}
+.brand{display:inline-flex;align-items:center;flex:none}
+.brand img{display:block;width:155px;height:auto}
 .site-header nav{display:flex;align-items:center;gap:26px;font-size:13px;font-weight:600;color:#5d5f6b}
 .site-header nav a:hover,.footer-links a:hover{color:#0866e9}
 .site-layout{max-width:1180px;margin:18px auto 0;padding:0 28px 52px;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,440px);align-items:start;gap:clamp(38px,6vw,100px)}
 .site-hero{position:sticky;top:80px;padding:clamp(42px,7vw,120px) 0 24px}
 .eyebrow{font-family:Wanted,Paperlogy,sans-serif;font-size:11px;font-weight:800;letter-spacing:.18em;color:#5368a9;margin:0 0 20px}
+.product-name{font-size:14px;letter-spacing:.025em;color:#6f489c}
 .site-hero h1{font-size:clamp(46px,5.7vw,80px);line-height:1.11;letter-spacing:-.068em;margin:0 0 28px;font-weight:700;word-break:keep-all}
 .site-hero h1 em{font-style:normal;color:#0866e9}
 .hero-description{font-size:18px;line-height:1.75;color:#636676;max-width:520px;margin:0 0 32px;word-break:keep-all}
@@ -114,7 +115,7 @@ body{background:#f7f7f9;color:#202127}
 }
 @media(max-width:520px){
  .site-header{padding:15px 18px;min-height:64px}
- .brand{font-size:20px}
+ .brand img{width:130px}
  .site-header nav{gap:15px;font-size:12px}
  .site-header nav a:nth-child(2){display:none}
  .site-layout{display:block;padding:0 0 30px}
