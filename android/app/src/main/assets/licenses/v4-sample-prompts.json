@@ -1,0 +1,31 @@
+{
+  "generator": "Built-in image_gen tool",
+  "created": "2026-10-11",
+  "purpose": "Original source photographs, pixel stretch rendered by app",
+  "assets": [
+    {
+      "key": "portrait",
+      "file": "chrome-muse.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: premium sample photograph for an offline pixel-stretch art editor, vertical 4:5 composition. Create a striking avant-garde fashion editorial photograph of a fictional adult woman with a sleek short dark bob, sculptural oversized liquid-silver metallic jacket over a vivid vermilion red high-neck garment, serene confident face in three-quarter profile looking left. Waist-up, model occupies 75 percent of image width, head starts around 15 percent from top, waist at bottom edge. Precisely detailed crinkled chrome fabric reflecting bands of red, ice blue and warm white; realistic face and hands. Full-bleed seamless deep charcoal studio background, dramatic hard side lighting with subtle blue rim, luxury independent fashion magazine photography. Simple clearly separable silhouette, no extra objects. Source photograph only: no stretched pixels, no trails, no graphic effects, no border, no text, no logos, no watermark. Not a celebrity.",
+      "path": "assets/chrome-muse.png",
+      "generated_source": "/Users/jongheonlee/.codex/generated_images/01a12833-c45b-75b3-9115-6ee5aa269698/exec-d4cf344e-8f23-4c0c-8e9a-87aaacebf247.png",
+      "transparent_background": false
+    },
+    {
+      "key": "car",
+      "file": "midnight-coupe.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: premium sample photograph for an offline pixel-stretch art editor. Vertical 4:5 full-bleed cinematic automotive photograph of a single futuristic vintage silver wedge-shaped sports coupe with no brand or badges, front three-quarter view, nose pointing right. The entire car is contained with narrow side margins, occupying 90 percent of frame width and lower 45 percent of frame. Background is a very dark clean charcoal studio cyclorama with a subtle reflective floor and no horizon clutter. Long precise cyan and vermilion light reflections wrap the sculpted metal body, wheels are crisp and black, glass dark. Dramatic editorial car photography, refined high-contrast real materials, striking sculptural composition. Large clean negative space ABOVE car for an interactive pixel stretch effect later. Source photograph only: no light trails, no stripes stretching out of the car, no pixel-stretch effect, no text, no border, no visible logos, no watermark.",
+      "path": "assets/midnight-coupe.png",
+      "generated_source": "/Users/jongheonlee/.codex/generated_images/01a12833-c45b-75b3-9115-6ee5aa269698/exec-0e07a909-c574-4615-812b-54cdf011affa.png",
+      "transparent_background": false
+    },
+    {
+      "key": "flower",
+      "file": "electric-bloom.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: premium sample photograph for an offline pixel-stretch art editor. Vertical 4:5 full-bleed fine-art botanical studio photograph. A single sculptural electric-cobalt blue anthurium flower, its large waxy heart-shaped petal undulating with pale icy blue highlights and a vivid coral-orange spadix, on one elegant curved deep green stem with one small leaf. The single flower occupies 65 percent of frame width in the upper half, entire flower inside frame, stem extends to the bottom edge. Rich believable macro texture and color, tactile wet waxy surface, sharp graceful silhouette. Seamless pale powder-blue backdrop with absolutely no frame or margins. Directional gallery-quality studio light, daring contemporary still-life art, graphic simplicity. Source photograph only: no pixel stretching, no artificial trails, no duplicate flowers, no vase, no hands, no text, no logos, no watermark.",
+      "path": "assets/electric-bloom.png",
+      "generated_source": "/Users/jongheonlee/.codex/generated_images/01a12833-c45b-75b3-9115-6ee5aa269698/exec-46004f2d-77c9-4773-838e-f88def38c1f1.png",
+      "transparent_background": false
+    }
+  ]
+}

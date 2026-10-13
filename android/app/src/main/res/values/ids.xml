@@ -1,0 +1,11 @@
+<resources>
+    <item name="pick_photo" type="id" />
+    <item name="open_export" type="id" />
+    <item name="save_image" type="id" />
+    <item name="effect_preview" type="id" />
+    <item name="effect_length" type="id" />
+    <item name="start_photo" type="id" />
+    <item name="mask_apply" type="id" />
+    <item name="mask_cancel" type="id" />
+    <item name="status_message" type="id" />
+</resources>

@@ -1,1 +1,16 @@
 .DS_Store
+
+# Native Android local files and generated output
+android/.gradle/
+android/.kotlin/
+android/.idea/
+android/**/build/
+android/local.properties
+android/keystore.properties
+android/app/src/main/assets/adi-registration.properties
+android/captures/
+*.jks
+*.keystore
+*.p12
+*.hprof
+android/test-artifacts/

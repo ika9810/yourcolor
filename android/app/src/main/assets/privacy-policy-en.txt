@@ -1,0 +1,22 @@
+YourColor Privacy Policy
+Effective date: October 11, 2026
+
+1. Version 2.0.0 and later: Information used and purpose
+YourColor uses photos you choose through the Android Photo Picker to create pixel stretch artwork and separate subjects. The app accesses a photo only when you select it, copies it into its private cache, and processes it on your device. Subject separation uses a U²-NetP model bundled with the app.
+
+2. Version 2.0.0 and later: Transfers and third parties
+Version 2.0.0 and later has no internet permission, user accounts, advertising or analytics SDKs, or developer server. It does not send selected photos or edited images to the developer or a third-party server. If you choose an external service as the save destination in the system save screen, that service handles the file under its own policy.
+
+3. Version 2.0.0 and later: Storage and deletion
+The app deletes its temporary copy of a selected photo when you change photos or return home. Remaining temporary photos are cleared when a new app session starts. Temporary JPG files created during editing stay in the app cache; files older than 24 hours are deleted the next time the app starts. Saved images remain in the photo library or location you chose. The app does not delete them automatically. You can delete them in your device's Photos or Files app. Uninstalling YourColor also removes its private cache.
+
+4. Earlier version 1: Data handling
+The version 1 app currently being replaced (formerly named 너의퍼스널컬러는) connects to the internet, opens external web pages, and contains advertising and analytics SDKs, including Google Mobile Ads. These SDKs may transmit your IP address (which can be used to estimate approximate location), app interactions, diagnostics, and device or advertising identifiers to Google or other SDK providers. This information may be used to deliver and measure ads, analyze usage, and prevent fraud. Transmission uses a secure connection. Each provider's policy, including the Google Privacy Policy (https://policies.google.com/privacy), governs retention and deletion. These advertising and analytics SDKs are absent from version 2.0.0 and later.
+
+5. Security and your choices
+Version 2.0.0 and later processes photos on the device and keeps temporary files in the app's private space. There is no separate user account or data stored on a developer server. For questions about data handling or deletion, use the contact below. You can delete saved images directly from your device's Photos or Files app.
+
+6. Contact
+YourColor privacy inquiries: legendspeeches@gmail.com
+
+This policy applies to the YourColor Android app. If data handling changes, the in-app and public policies will be updated together.
