@@ -9,6 +9,8 @@
   <img src="android/release-assets/feature-graphic.png" alt="yourcolor — 사진 속 색을 펼쳐 만드는 픽셀 스트레치" width="100%">
 </p>
 
+<p align="center"><a href="https://ika9810.github.io/yourcolor/"><strong>🌐 웹에서 바로 만들기 ↗</strong></a></p>
+
 ## 사진 속 색을 펼치면
 
 | 원본 샘플 | yourcolor 결과 |
@@ -29,7 +31,9 @@
 
 ## 실행하기
 
-**Android Studio**에서 [`android/`](android) 폴더를 열고, Gradle 동기화 후 `app`을 실행하세요. Android 7.0 이상을 지원합니다. 개발 환경과 기능·검증 범위는 [Android 실행 안내](android/README.md)에 정리되어 있습니다.
+**웹:** [yourcolor 웹 에디터](https://ika9810.github.io/yourcolor/)에서 사진을 고르고 바로 편집하세요. 계정 없이 사용하며 사진은 브라우저에서 처리됩니다.
+
+**Android 개발 버전:** Android Studio에서 [`android/`](android) 폴더를 열고, Gradle 동기화 후 `app`을 실행하세요. Android 7.0 이상을 지원합니다. 개발 환경과 기능·검증 범위는 [Android 실행 안내](android/README.md)에 정리되어 있습니다.
 
 ## Google Play
 
@@ -39,4 +43,4 @@
 
 ## 히스토리
 
-이 저장소는 2022년 AI 퍼스널 컬러 진단 웹 서비스 「**너의 퍼스널 컬러는**」에서 시작했습니다. 원래 웹 버전은 [`index.html`](index.html)에 남아 있으며, 현재는 Android 사진 편집 앱을 중심으로 개발하고 있습니다.
+이 저장소는 2022년 AI 퍼스널 컬러 진단 웹 서비스 「**너의 퍼스널 컬러는**」에서 시작했습니다. 원래 웹 버전은 [`index.html`](index.html)에 남아 있으며, 현재는 픽셀 스트레치 Android 앱과 웹 에디터를 개발하고 있습니다.
