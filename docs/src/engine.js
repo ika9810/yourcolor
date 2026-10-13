@@ -224,28 +224,6 @@ async function decodePhoto(file){
 $('download').onclick=()=>{const project=exportProject();if(!project)return;draw($('save-canvas'),project);$('save-canvas').toBlob(blob=>{if(!blob){toast('이미지를 만들지 못했어요');return}clearDownload();downloadUrl=URL.createObjectURL(blob);const filename=`yourcolor-${project.state.effect||'original'}-${Date.now()}.jpg`;const fallback=$('download-fallback'),open=$('download-open');fallback.href=downloadUrl;fallback.download=filename;fallback.hidden=false;open.href=downloadUrl;open.hidden=false;const a=document.createElement('a');a.href=downloadUrl;a.download=filename;document.body.append(a);a.click();a.remove();toast('JPG를 준비했어요. 저장되지 않았다면 아래 링크를 사용해 주세요')},'image/jpeg',.95)};
 function toast(message){$('toast').textContent=message;$('toast').classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('toast').classList.remove('show'),3000)}
 document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='z'&&!['INPUT','SELECT'].includes(document.activeElement.tagName)){e.preventDefault();$(e.shiftKey?'redo':'undo').click()}});
-function logo(){
- // A single scan column of the colored 'o' is stretched inside the word.
- // The letter's bowl stays open; the word keeps its baseline and silhouette.
- const art=canvas(1080,180),c=art.getContext('2d');
- const font='800 142px Wanted';c.font=font;c.textBaseline='alphabetic';c.fillStyle='#23232b';
- const baseline=140,prefix='yourc',suffix='lor';c.fillText(prefix,8,baseline);
- const x=8+c.measureText(prefix).width+4;
- const glyph=canvas(100,180),g=glyph.getContext('2d');g.font=font;g.fillStyle='#fff';g.fillText('o',0,baseline);
- const colors=[[0,'#6631b5'],[.06,'#e6a0ba'],[.12,'#803994'],[.18,'#ef6d40'],[.25,'#e49b4a'],[.34,'#37243f'],[.52,'#e86030'],[.65,'#f6b273'],[.76,'#70356d'],[.82,'#ef502f'],[.88,'#ec9873'],[.94,'#b22f67'],[1,'#65339a']];
- const gradient=g.createLinearGradient(0,baseline-83,0,baseline+1);colors.forEach(([at,color])=>gradient.addColorStop(at,color));
- g.globalCompositeOperation='source-in';g.fillStyle=gradient;g.fillRect(0,0,100,180);g.globalCompositeOperation='source-over';
- const cut=Math.round(c.measureText('o').width/2),stretch=64;
- c.drawImage(glyph,0,0,cut,180,x,0,cut,180);
- c.imageSmoothingEnabled=false;c.drawImage(glyph,cut,0,1,180,x+cut,0,stretch,180);c.imageSmoothingEnabled=true;
- c.drawImage(glyph,cut,0,100-cut,180,x+cut+stretch,0,100-cut,180);
- const after=x+c.measureText('o').width+stretch+1;c.fillText(suffix,after,baseline);
- const width=after+c.measureText(suffix).width+10;
- for(const target of $$('.logo')){
-  target.width=Math.ceil(width);target.height=160;const t=target.getContext('2d');t.drawImage(art,0,-10);
- }
-}
-
 const sampleFiles={car:'midnight-coupe',portrait:'chrome-muse',flower:'electric-bloom'};
 window.addEventListener('DOMContentLoaded',()=>{
  Promise.all(Object.entries(assets).map(async([key,url])=>{
@@ -253,5 +231,5 @@ window.addEventListener('DOMContentLoaded',()=>{
   const project=prepare(key,img),mask=new Image();mask.src=`./assets/${sampleFiles[key]}-mask.png`;await mask.decode();
   project.fg.getContext('2d').drawImage(mask,0,0,W,H);project.maskReady=true;project.status='ready';
   projects[key]=project;$('photo-'+key).src=url;
- })).then(async()=>{await document.fonts.load('800 142px Wanted').catch(()=>[]);logo();sync();render();renderThumbnails();document.body.dataset.ready='true';initializeV4()}).catch(error=>{console.error(error);toast('샘플을 불러오지 못했어요. 새로고침해 주세요')});
+ })).then(()=>{sync();render();renderThumbnails();document.body.dataset.ready='true';initializeV4()}).catch(error=>{console.error(error);toast('샘플을 불러오지 못했어요. 새로고침해 주세요')});
 },{once:true});
