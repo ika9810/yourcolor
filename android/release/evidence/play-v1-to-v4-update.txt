@@ -1,0 +1,17 @@
+Before update
+    versionCode=1 minSdk=21 targetSdk=30
+    versionName=1.0.0
+    lastUpdateTime=2026-10-13 13:46:22
+      firstInstallTime=2026-10-13 13:46:22
+fdd6a8f830649a216d220b4b2f1958fc024d8cb5130f3fac6da01d12d97794c5  /sdcard/Android/data/com.robotics.yourcolor/files/upgrade-marker.txt
+Install result
+Performing Streamed Install
+Success
+After update
+    versionCode=4 minSdk=24 targetSdk=36
+    versionName=2.0.0
+    lastUpdateTime=2026-10-13 14:04:47
+      firstInstallTime=2026-10-13 13:46:22
+fdd6a8f830649a216d220b4b2f1958fc024d8cb5130f3fac6da01d12d97794c5  /sdcard/Android/data/com.robotics.yourcolor/files/upgrade-marker.txt
+Starting: Intent { cmp=com.robotics.yourcolor/.MainActivity }
+    topResumedActivity=ActivityRecord{245385415 u0 com.robotics.yourcolor/.MainActivity t50}

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">
+  <defs>
+    <linearGradient id="ink" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#121522"/>
+      <stop offset="1" stop-color="#262e53"/>
+    </linearGradient>
+    <linearGradient id="trail" x1="0" x2="1">
+      <stop stop-color="#f3f3f8"/>
+      <stop offset=".16" stop-color="#91c1ff"/>
+      <stop offset=".38" stop-color="#235fe9"/>
+      <stop offset=".57" stop-color="#ec6b62"/>
+      <stop offset=".8" stop-color="#aabdf6"/>
+      <stop offset="1" stop-color="#181a28"/>
+    </linearGradient>
+    <clipPath id="card"><rect x="0" y="0" width="295" height="384" rx="31"/></clipPath>
+  </defs>
+  <rect width="1024" height="500" fill="#f5f5f7"/>
+  <path d="M0 480H1024" stroke="#e9e9ef" stroke-width="2"/>
+  <g transform="translate(76 95)">
+    <rect width="72" height="72" rx="17" fill="#235fe9"/>
+    <path fill="#fff" d="M17 16h11v25c0 10 27 2 27 19H44C44 50 17 62 17 41Z"/>
+    <path fill="#b8cdff" d="M31 16h9v18c0 10 25 2 25 26h-9C56 44 31 53 31 34Z"/>
+    <text x="0" y="146" fill="#1c1c24" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="800" letter-spacing="-4">yourcolor</text>
+    <text x="2" y="225" fill="#1c1c24" font-family="Apple SD Gothic Neo, sans-serif" font-size="40" font-weight="700" letter-spacing="-2">너의 순간을,</text>
+    <text x="2" y="281" fill="#1c1c24" font-family="Apple SD Gothic Neo, sans-serif" font-size="40" font-weight="700" letter-spacing="-2">조금 더 길게.</text>
+    <text x="2" y="335" fill="#777984" font-family="Apple SD Gothic Neo, sans-serif" font-size="22">사진 속 색으로 만드는 픽셀 스트레치</text>
+  </g>
+  <g transform="translate(660 57) rotate(9 147 192)">
+    <rect x="8" y="10" width="295" height="384" rx="31" fill="#d7d9e5"/>
+    <g clip-path="url(#card)">
+      <rect width="295" height="384" fill="url(#ink)"/>
+      <path d="M26 74h235v226H26z" fill="url(#trail)" opacity=".9"/>
+      <path d="M72 74h17v226H72zM116 74h9v226h-9zM174 74h23v226h-23zM226 74h8v226h-8z" fill="#111727" opacity=".47"/>
+      <circle cx="149" cy="189" r="64" fill="#e84d5f"/>
+      <path d="M149 123c-43 0-77 37-77 82 0 25 14 44 33 59h88c20-15 33-34 33-59 0-45-34-82-77-82Z" fill="#235fe9" opacity=".93"/>
+      <path d="M86 272h126v113H86z" fill="#aabdf6"/>
+      <path d="M86 272h126v113H86z" fill="url(#trail)" opacity=".56"/>
+    </g>
+    <rect x="1.5" y="1.5" width="292" height="381" rx="29.5" fill="none" stroke="#fff" stroke-width="3"/>
+  </g>
+</svg>

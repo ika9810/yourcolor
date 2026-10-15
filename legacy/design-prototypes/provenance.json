@@ -1,0 +1,163 @@
+{
+  "created": "2026-10-10",
+  "purpose": "YourColor HTML visual design proposal; not native implementation approval",
+  "generator": "Built-in image_gen tool",
+  "assets": [
+    {
+      "path": "assets/editorial-portrait.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: an original photographic cutout for a pixel-stretch photo editor UI design study. Create a high-fashion editorial studio photo of a fictional adult woman, upper body to mid-thigh, wearing a rich cobalt blue oversized long-sleeved silk shirt and a vivid red-orange sculptural scarf. Short dark bob, serene face turned slightly left, one arm bent elegantly with hand at waist, three-quarter view. Real skin, fabric grain and believable editorial photography, soft side daylight, refined independent fashion magazine aesthetic. The person is centered and all hair, shoulders, hands and garment edges must fit fully inside the image with a small margin. Square composition. Genuine transparent background, isolated clean cutout, no ground shadow, no surrounding scene. No text, no logo, no watermarks, no pixel-stretch effect: the app will draw the effect later. Not an existing celebrity.",
+      "transparent_background": true
+    },
+    {
+      "path": "assets/calla-lily.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: an original photographic cutout for a photo-art editor design study. A single vivid burnt-orange calla lily with a gently bending tall fresh green stem and one sculptural green leaf, photographed like fine art botanical editorial photography, translucent petal detail, soft natural side light, exquisitely real. Full flower and long stem inside frame with generous margin, elegantly leaning a little to the left. Square composition. Genuine transparent background, isolated clean cutout. No vase, no ground shadow, no background objects, no text, no logo, no watermarks, no abstract effects.",
+      "transparent_background": true
+    },
+    {
+      "path": "assets/orange-coupe.png",
+      "transparent_background": true,
+      "generator": "Built-in image_gen tool",
+      "prompt": "Use case: product-mockup. Asset type: original transparent photograph sample for an offline pixel-stretch art editor. Create a photorealistic cutout of a single vintage 1970s burnt-orange two-door sports coupe, no visible logos, badges or text. Three-quarter side view, nose to the right, full car entirely in frame, beautifully sculpted paint, cream highlights, chrome bumpers, black rubber wheels, dark windows. Low camera height, elegant editorial automotive photography, natural warm daylight. Wide landscape composition with the car occupying 88 percent width and generous clear transparency above and below. Transparent background, clean accurate alpha around the whole vehicle, no ground, no scenery, no typography, no other objects. This is the source photograph only: no pixel stretching or stripes in the generated image."
+    }
+  ],
+  "font": {
+    "family": "Pretendard",
+    "version": "1.3.9",
+    "source": "https://github.com/orioncactus/pretendard",
+    "license": "SIL Open Font License 1.1; see assets/Pretendard-LICENSE.txt"
+  },
+  "note": "Photos are generated fictional preview assets. The initial v1 used prepared transparency; v2–v4 infer editable subject masks with the bundled local model.",
+  "updated": "2026-10-10",
+  "v2_fonts": [
+    {
+      "family": "Wanted Sans",
+      "source": "https://github.com/wanteddev/wanted-sans",
+      "license": "assets/WantedSans-LICENSE.txt"
+    },
+    {
+      "family": "SUIT",
+      "source": "https://sun.fo/suit/",
+      "license": "assets/SUIT-LICENSE.txt"
+    },
+    {
+      "family": "Paperlogy",
+      "source": "https://freesentation.blog/paperlogyfont",
+      "license": "assets/Paperlogy-LICENSE.txt"
+    }
+  ],
+  "v2_reference_videos": [
+    "https://www.youtube.com/watch?v=W0xAd05ZcXY",
+    "https://www.youtube.com/watch?v=7nhqaLSy9lM"
+  ],
+  "segmentation": {
+    "model": "u2netp",
+    "source": "https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2netp.onnx",
+    "sha256": "309c8469258dda742793dce0ebea8e6dd393174f89934733ecc8b14c76f4ddd8",
+    "runtime": "onnxruntime-web 1.22.0 (npm integrity verified)",
+    "processing": "Local browser WASM in Web Worker, no photo upload",
+    "selection": "HTML prototype only; Android model not finalized"
+  },
+  "wordmark": {
+    "path": "assets/yourcolor-wordmark-stretch.png",
+    "source": "src/v2.js logo(); Wanted Sans glyph pixels with horizontally stretched scan column",
+    "status": "Revised proposal, awaiting user design review",
+    "supersedes": "assets/yourcolor-logo-color-stretch.png"
+  },
+  "design_v3": {
+    "status": "Proposal; not Android implementation approval",
+    "source": [
+      "src/v3.html",
+      "src/v3.css",
+      "src/v3.js"
+    ],
+    "effects": [
+      "Subject-masked horizontal row or vertical column stretched outward",
+      "Same-root fan expansion in all four directions",
+      "Same-root curved stretch in all four directions"
+    ],
+    "images": "Reuses existing original generated sample photographs",
+    "segmentation": "Reuses bundled local u2netp ONNX model and Worker",
+    "snapshot": "preview-v3-directions-mobile.png",
+    "previous_experiment": "archive/v3-orbit/",
+    "updated": "2026-10-11",
+    "directions": [
+      "up",
+      "down",
+      "left",
+      "right"
+    ]
+  },
+  "design_v4": {
+    "updated": "2026-10-11",
+    "status": "Whole-flow UI proposal; home copy and Paperlogy font approved by user on 2026-10-11; not final Android approval",
+    "source": [
+      "src/v4.html",
+      "src/v4.css",
+      "src/v4.js",
+      "src/v4-engine.js"
+    ],
+    "fonts": [
+      {
+        "family": "Pretendard",
+        "noonnu": "https://noonnu.cc/font_page/694",
+        "license": "assets/Pretendard-LICENSE.txt"
+      },
+      {
+        "family": "SUIT",
+        "noonnu": "https://noonnu.cc/font_page/845",
+        "license": "assets/SUIT-LICENSE.txt"
+      },
+      {
+        "family": "Paperlogy",
+        "noonnu": "https://noonnu.cc/font_page/1456",
+        "license": "assets/Paperlogy-LICENSE.txt"
+      }
+    ],
+    "screens": [
+      "home",
+      "photo selection",
+      "editor",
+      "export preview"
+    ],
+    "artwork": "New generated source photographs, rendered through the actual local subject-anchored pixel stretch engine",
+    "processing": "Local WASM segmentation; no photo upload; only selected UI font name persists locally",
+    "snapshots": [
+      "preview-v4-overview.png",
+      "preview-v4-fonts.png",
+      "preview-v4-new-samples.png",
+      "preview-v4-large-editor.png",
+      "preview-v4-large-export.png"
+    ],
+    "approved_font": "Paperlogy",
+    "approved_home_copy": {
+      "headline": [
+        "너의 순간을,",
+        "조금 더 길게."
+      ],
+      "description": [
+        "사진 속 색을 펼쳐 만드는",
+        "나만의 픽셀 스트레치."
+      ]
+    },
+    "sample_assets": [
+      {
+        "key": "portrait",
+        "path": "assets/chrome-muse.png",
+        "generator": "Built-in image_gen tool"
+      },
+      {
+        "key": "car",
+        "path": "assets/midnight-coupe.png",
+        "generator": "Built-in image_gen tool"
+      },
+      {
+        "key": "flower",
+        "path": "assets/electric-bloom.png",
+        "generator": "Built-in image_gen tool"
+      }
+    ],
+    "sample_prompts": "assets/v4-sample-prompts.json",
+    "framing": "Aspect-preserving center crop to cover 4:5 for both samples and user imports; no letterboxing; edges may be cropped",
+    "preview_layout": "Full-width artwork; live editor scrolls instead of shrinking artwork; export uses the same width without decorative rotation"
+  }
+}

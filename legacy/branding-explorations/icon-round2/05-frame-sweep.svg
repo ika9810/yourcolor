@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="사진 프레임의 한 줄을 길게 끌어낸 아이콘 시안">
+  <rect width="512" height="512" fill="#12224B"/>
+  <path d="M111 315V139c0-17 12-29 29-29h226c18 0 30 13 30 30v165" fill="none" stroke="#E8F2FF" stroke-width="35" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M111 324h151c54 0 63 78 135 78h19" fill="none" stroke="#5B9CFF" stroke-width="70" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M111 324h151c54 0 63 78 135 78h19" fill="none" stroke="#B9E3FF" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

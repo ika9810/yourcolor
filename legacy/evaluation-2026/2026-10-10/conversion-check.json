@@ -1,0 +1,22 @@
+[
+  {
+    "path": "test/spring_bright/11489.png",
+    "max_logit_error": 5.602836608886719e-06,
+    "same_prediction": true
+  },
+  {
+    "path": "test/summer_cool/1082.png",
+    "max_logit_error": 6.318092346191406e-06,
+    "same_prediction": true
+  },
+  {
+    "path": "test/autumn_deep/10528.png",
+    "max_logit_error": 5.7220458984375e-06,
+    "same_prediction": true
+  },
+  {
+    "path": "test/winter_bright/10507.png",
+    "max_logit_error": 5.125999450683594e-06,
+    "same_prediction": true
+  }
+]

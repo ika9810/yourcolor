@@ -1,0 +1,160 @@
+너의퍼스널컬러는 — 공개 모델 비교 결과
+2026-10-10 · 앱 구현 전 조사 및 로컬 실험
+
+판단
+
+현재 공개된 두 모델을 그대로 출시 앱에 채택하는 것은 추천하지 않는다.
+다음 검증 대상으로 하나를 남긴다면 EfficientNet을 선택한다. 이번 공개 자료에서
+라벨 일치율이 상대적으로 높고 분류 모델 파일도 작다. 그러나 가을로 쏠린 예측과
+JPEG 압축 민감도가 커서, 기존 앱의 정확도·일관성 문제가 해결됐다고 볼 수 없다.
+Personal Color AI의 공개 92.96%는 합성 수치 자료 평가이며, 실제 사진 처리 전체의
+성능을 뜻하지 않는다. 이번 실사진 시험에서도 그 수준은 재현되지 않았다.
+
+시험 조건
+
+자료: menes000/armocromia-12-season의 test 912장 전부.
+봄 203장 / 여름 186장 / 가을 259장 / 겨울 264장.
+224×224 배경 마스킹 얼굴 사진이며, 일반 사용자의 안내 촬영 자료가 아니다.
+이미지 파일 SHA-256 중복은 없었다. 이미지의 계절 접두사를 4계절 정답으로 사용했다.
+대면 전문가 진단과의 정확도가 아니라 공개 자료에 부여된 라벨과의 일치율이다.
+
+공개 Lumina 특징표의 원본 Deep Armocromia partition을 대조한 결과,
+912장 모두 파일명과 계절 라벨이 원본 test 항목에 일대일 대응했다.
+다만 해당 EfficientNet 체크포인트의 정확한 학습 이미지 목록은 공개되지 않아
+학습·평가 이미지 또는 인물의 중복을 완전히 배제하지는 못했다.
+CelebA 인물 ID와의 단순 파일명 대응은 원본 번호 체계를 확인할 수 없어 사용하지
+않았다. 동일 인물 재촬영 일치율은 이번 결과에 포함하지 않는다.
+
+EfficientNet: 제작자의 공개 데모처럼 256/232/280 크기로 조정하고 중앙 224px
+크롭 및 좌우 반전을 적용한 6개 고정 뷰의 확률을 평균했다. 공개 체크포인트를
+ONNX로 변환해 CPU에서 실행했다. 실제 사진 4장에서도 PyTorch와 ONNX의
+최상위 분류가 모두 같았고, 최대 logit 차이는 0.00000632 미만이었다.
+
+Personal Color AI: 제작자 공개 데모의 BiSeNet 가중치와 실제 색상 특징 계산
+JavaScript 함수를 사용했다. 함수는 UI·네트워크 부분을 제외하고 로컬 Node에서
+실행했다. MediaPipe iris 검출은 Python FaceMesh 어댑터를 사용했다.
+브라우저 Canvas 대신 Pillow로 크기를 바꾸므로 브라우저와 픽셀 단위로 완전히
+동일한 재현이라고 주장하지 않는다. 인종을 추론하지 않고 제작자 기본 auto
+보정식만 적용했다. 기상 정보는 기본값 UV=5, 구름량=30, 태양각=45,
+ambient=0.6으로 고정했다. 모든 사진은 로컬에서 처리했다.
+
+원본 데모는 noise_level을 Math.random() * 0.04 + 0.01로 만든다.
+주 비교에서는 이 값을 0.03으로 고정했고, 원본 난수 범위의 영향은 별도 검사했다.
+16개 세부 유형 중 최대 확률 유형을 고른 다음 계절로 환산한 것이 주 결과다.
+같은 계절의 확률을 합산하는 대안도 함께 확인했다.
+
+결과
+
+                                     EfficientNet       Personal Color AI
+912장 라벨 일치                      324 / 912          276 / 912
+라벨 일치율                          35.5%              30.3%
+계절별 재현율의 평균                 31.7%              29.9%
+Macro F1                             25.7%              24.3%
+분류 모델 파일                       16.6 MB            100.3 MB
+
+모든 사진에 가장 많은 정답 계절인 겨울을 출력하면 일치율은 28.9%다.
+Personal Color AI에서 세부 유형 확률을 계절별로 합산한 경우도 275/912,
+30.2%로 큰 개선이 없었다. 분류 파일 크기는 앱 전체 크기가 아니다.
+Personal Color AI는 별도로 얼굴 영역 분리 모델 53.2MB와 iris 검출 자산도 필요하다.
+EfficientNet 역시 실제 앱에서는 얼굴 검출·전처리가 추가로 필요하다.
+
+계절별 정답 재현율
+봄:   EfficientNet 11/203 (5.4%)    Personal Color AI 104/203 (51.2%)
+여름: EfficientNet 7/186  (3.8%)    Personal Color AI 14/186  (7.5%)
+가을: EfficientNet 213/259 (82.2%)  Personal Color AI 145/259 (56.0%)
+겨울: EfficientNet 93/264 (35.2%)   Personal Color AI 13/264  (4.9%)
+
+EfficientNet은 912장 중 680장(74.6%)을 가을로 분류했다.
+Personal Color AI는 830장(91.0%)을 봄 또는 가을로 분류했다.
+따라서 한 계절로 치우쳐 출력이 덜 바뀌는 현상을 좋은 진단 일관성으로 해석하면 안 된다.
+
+입력 변형 시험
+
+예측을 보기 전에 seed=20261010으로 각 계절 30장씩, 총 120장을 선택했다.
+원본마다 밝기 90%, 밝기 110%, RGB (1.04,1,0.96), RGB (0.96,1,1.04),
+JPEG quality=75의 다섯 가지 변형을 각각 독립적으로 적용했다. 총 600개 변형이다.
+변형본의 정답률을 측정한 것이 아니라 원본 대비 예측 계절 변화 여부를 측정했다.
+
+변형                                  EfficientNet      Personal Color AI
+밝기 -10%                             4/120 (3.3%)      24/120 (20.0%)
+밝기 +10%                             3/120 (2.5%)      11/120 (9.2%)
+따뜻한 색감                           7/120 (5.8%)      18/120 (15.0%)
+차가운 색감                           9/120 (7.5%)      24/120 (20.0%)
+JPEG 압축                             27/120 (22.5%)    5/120 (4.2%)
+다섯 변형 중 하나라도 계절 변경        35/120 (29.2%)    49/120 (40.8%)
+
+EfficientNet이 모든 항목에서 더 나은 것은 아니다. JPEG에는 더 민감했다.
+마스킹된 이미지의 검은 경계에도 압축 흔적이 생기므로, 이 JPEG 수치를 그대로
+일반 셀카에 적용해서는 안 된다. 인공 변형 시험은 실제 동일 인물 재촬영 시험을
+대체하지 않는다. 실제 조명·카메라 차이에 대한 보장을 제공하지 않는다.
+
+Personal Color AI의 추가 변동 원인
+
+사진에서 뽑은 다른 수치를 고정하고 noise_level만 원본 난수 범위 내 21개 값으로
+바꾸었을 때, 912장 중 14장에서는 4계절 결과가 달라졌다. 세부 유형까지 보면
+44장이다. 이는 앱 전체의 무작위 오답률이 아니라 해당 입력의 민감도 검사다.
+난수 입력을 고정하면 이 원인은 제거되지만, 그 자체로 정확도가 좋아지지는 않는다.
+
+날씨 입력을 세 가지 정해진 조건으로 바꾸는 별도 검사에서도 동일 사진 53장의
+계절이 기본값 결과와 달라졌다. 원본 데모는 업로드한 사진의 촬영 당시 날씨가
+아닌 현재 위치·시간의 날씨를 참조할 수 있어, 그대로 이식하기 적합하지 않다.
+이 앱의 오프라인 요구에 맞춘 기본값 처리가 전체 성능에 미칠 영향도 검증 대상이다.
+
+전처리 한계 및 추가 점검
+
+Personal Color AI: 얼굴 피부 검출 성공 912/912, iris 검출 911/912.
+머리카락 기본값 사용 35장, 목 색상 대체값 사용 694장(76.1%).
+평가 사진에 목이 없는 경우가 많아, 이 자료는 50개 입력을 요구하는 모델의
+전체 성능을 판단하기에 제약이 있다. 모델의 일반적인 정확도 우열을 확정하지 않는다.
+
+EfficientNet: 모델 설명은 피부 마스킹을 언급하지만 실제 공개 데모는 구현하지 않는다.
+학습 때 쓴 정확한 마스킹 코드·클래스 조합은 확보하지 못했다. 사전 선정한 같은
+120장에 피부+코(class 1,10)만 남기는 보조 시험을 해 보았으나 37/120(30.8%)였고,
+공개 데모 방식은 같은 자료에서 41/120(34.2%)였다. 78장의 결과가 서로 달랐다.
+이는 전처리 민감도의 진단용 시험이며 저자의 학습 파이프라인 재현이나 최적화가 아니다.
+
+실행 환경과 보존 자료
+
+Apple M1 Max, macOS, ONNX Runtime CPU. Android 실기기 실행·속도·메모리는 미검증.
+Python 3.12.14 / ONNX Runtime 1.31.0 / NumPy 1.26.4 / Pillow 12.3.0 /
+MediaPipe 0.10.21 / Torch 2.14.1 / timm 1.0.30.
+pip check는 MediaPipe wheel 플랫폼 호환 경고를 표시했다. 실제 import와 landmark
+추론 및 전체 실험은 성공했다. 이 임시 환경을 그대로 배포용 환경으로 권장하지 않는다.
+
+summary.json: 전체 집계, 혼동행렬, 한계.
+predictions.jsonl: 원본 및 변형별 예측. 사진 자체와 인물 이름은 포함하지 않는다.
+dataset-manifest.json: 이미지 경로·파일 해시.
+protocol.json: 변형 및 사전 선정 표본.
+provenance.json: 모델·데이터 revision 및 파일 해시.
+compare.py / extract_features.cjs / skin_audit.py / summarize.py: 로컬 실험 코드.
+사진·모델 원본은 provenance.json에 기록된 저장소 밖 임시 캐시에 있다.
+연구용 데이터·연예인 사진을 앱이나 저장소에 넣지 않았다. Android 앱 코드는 변경하지 않았다.
+
+재실행: compare.py --cache <캐시 경로>를 해당 실험 환경의 Python으로 실행한다.
+대용량 자산은 캐시에 있어야 한다. 분할 실행 결과는 path로 중복을 확인한 다음
+combined-results.jsonl로 합쳐 summarize.py --cache <캐시 경로> --out <집계 경로>로 집계한다.
+현재 결과는 912개 고유 경로, 120개 변형 대상, 총 600개 변형이 모두 있는지 확인했다.
+
+출처
+
+EfficientNet 모델·학습 기록:
+https://huggingface.co/jiwoonkim00/personal-color-classifier
+https://huggingface.co/jiwoonkim00/personal-color-classifier/blob/main/PROGRESS_SNAPSHOT.md
+https://huggingface.co/spaces/jiwoonkim00/personal-color-demo/blob/main/app.py
+
+Personal Color AI 모델·실제 웹앱 코드:
+https://huggingface.co/mr4/personal-color-ai
+https://huggingface.co/spaces/mr4/personal-color-analysis/tree/main
+https://huggingface.co/spaces/mr4/personal-color-analysis/blob/main/assets/index-CiPdF8ss.js
+
+평가 데이터(연구용, 앱 배포용 사용 대상 아님):
+https://huggingface.co/datasets/menes000/armocromia-12-season
+https://github.com/lorenzo-stacchio/Deep-Armocromia
+https://github.com/nypoclary/armocromia-classical-ml/blob/main/data/features_30_per_region.csv
+
+이 결과를 바탕으로 한 제안
+
+모델 최종 채택은 보류한다. 두 후보 중 추가 검증 대상으로는 EfficientNet을 남긴다.
+출시 판단에는 한국 사용자의 안내 촬영 2~3장, 대면 진단 등 신뢰할 만한 기준,
+인물 단위로 분리된 평가와 실제 재촬영 일관성 확인이 필요하다.
+지금 결과만으로 기존 Teachable Machine보다 정확하다고 주장하지 않는다.

@@ -63,8 +63,22 @@
 
 사진 속 색을 펼쳐 작품을 만드는 Android 앱을 [Google Play](https://play.google.com/store/apps/details?id=com.robotics.yourcolor)에서 다운로드하세요.
 
-<a href="https://play.google.com/store/apps/details?id=com.robotics.yourcolor"><img src="img/google-play-badge-ko.png" alt="Google Play에서 yourcolor 픽셀 스트레치 앱 다운로드" height="56"></a>
+<a href="https://play.google.com/store/apps/details?id=com.robotics.yourcolor"><img src="branding/google-play-badge-ko.png" alt="Google Play에서 yourcolor 픽셀 스트레치 앱 다운로드" height="56"></a>
 
-## 히스토리
+## 저장소 구성
 
-이 저장소는 2022년 AI 퍼스널 컬러 진단 웹 서비스 「**너의 퍼스널 컬러는**」에서 시작했습니다. 원래 웹 버전은 [`index.html`](index.html)에 남아 있으며, 현재는 픽셀 스트레치 Android 앱과 웹 에디터를 개발하고 있습니다.
+| 경로 | 내용 |
+| --- | --- |
+| [`android/`](android/) | Google Play에 게시한 Kotlin 앱, 테스트, 스토어 이미지와 출시 기록 |
+| [`docs/`](docs/) | [GitHub Pages 웹 에디터](https://ika9810.github.io/yourcolor/)의 실제 배포 소스 (`main`의 `/docs`) |
+| [`branding/`](branding/) | 현재 로고와 이미지 생성 소스 |
+| [`legal/`](legal/) | Android 개인정보처리방침의 저장소 사본과 공개 주소 안내 |
+| [`legacy/`](legacy/) | 2022년 퍼스널 컬러 사이트, 이전 기획·디자인·브랜드 검토·평가 자료 |
+
+## 현재 출시와 인수인계
+
+Android `com.robotics.yourcolor` **2.0.2 (versionCode 6)**은 2026년 10월 14일 Google Play 프로덕션에 게시됐습니다. 한국어와 미국·캐나다 영어 등록정보, 아이콘, 그래픽, 첫 스크린샷이 공개 화면에 반영됐습니다. [출시 기록](android/release/RELEASE_CHECKLIST.md)에 검토·게시 결과, 아티팩트 해시와 남은 관찰 항목을 기록했습니다.
+
+[운영·복구 안내](MAINTENANCE.md)는 빌드, 웹 게시, 개인정보처리방침 갱신, 서명 키의 별도 보관 방법을 설명합니다. [검증 기록](android/release/VALIDATION.md)과 [스토어 문안](android/release/)도 함께 보관합니다. Git에서 제외된 Play 업로드 키와 비밀번호는 이 저장소에 없으므로, 로컬 컴퓨터를 정리하기 전에 별도 안전 저장소로 백업하고 복원 가능성을 확인해야 합니다.
+
+이 프로젝트는 2022년 AI 퍼스널 컬러 진단 웹 서비스 「너의 퍼스널 컬러는」에서 시작했습니다. 그 자료는 현재 서비스와 혼동되지 않도록 [`legacy/`](legacy/)에 모았습니다.

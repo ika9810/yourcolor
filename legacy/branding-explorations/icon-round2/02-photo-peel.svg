@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="A photo corner peeled into one flowing color ribbon">
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1846B2"/>
+      <stop offset="1" stop-color="#103796"/>
+    </linearGradient>
+    <linearGradient id="photo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C8E6FF"/>
+      <stop offset=".6" stop-color="#78B7F3"/>
+      <stop offset="1" stop-color="#4B91E8"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFBA78"/>
+      <stop offset=".48" stop-color="#F7804C"/>
+      <stop offset="1" stop-color="#EF6039"/>
+    </linearGradient>
+    <clipPath id="photoClip">
+      <path d="M143 112H327C347 112 361 126 361 146V268L288 342H143C123 342 109 328 109 308V146C109 126 123 112 143 112Z"/>
+    </clipPath>
+  </defs>
+  <rect width="512" height="512" fill="#F7F8FB"/>
+  <rect x="38" y="38" width="436" height="436" rx="114" fill="url(#ground)"/>
+  <path d="M279 315C309 308 335 315 349 338C362 359 357 380 378 386C389 389 402 384 412 377V418C383 434 347 430 322 412C304 399 296 381 297 359C297 347 290 340 273 338Z" fill="url(#flow)"/>
+  <path d="M143 112H327C347 112 361 126 361 146V268L288 342H143C123 342 109 328 109 308V146C109 126 123 112 143 112Z" fill="url(#photo)"/>
+  <g clip-path="url(#photoClip)">
+    <path d="M99 280C155 221 207 234 253 253C295 270 325 243 377 192V357H99Z" fill="#2C6EF1"/>
+    <path d="M101 307C165 264 198 270 245 290C287 308 320 274 378 232V362H101Z" fill="#174FC9"/>
+    <circle cx="296" cy="174" r="35" fill="#FF9157"/>
+  </g>
+  <path d="M288 342L361 268V316C361 334 346 348 328 348Z" fill="#FFD29B"/>
+  <path d="M288 342L361 268" fill="none" stroke="#FFFFFF" stroke-opacity=".65" stroke-width="6" stroke-linecap="round"/>
+</svg>

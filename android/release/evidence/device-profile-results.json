@@ -1,0 +1,82 @@
+[
+  {
+    "profile": "s26-ultra",
+    "pixels": [
+      1440,
+      3120
+    ],
+    "testDensity": 560,
+    "fontScale": 1.0,
+    "passed": true
+  },
+  {
+    "profile": "flip8-main",
+    "pixels": [
+      1080,
+      2520
+    ],
+    "testDensity": 420,
+    "fontScale": 1.0,
+    "passed": true
+  },
+  {
+    "profile": "fold8-cover",
+    "pixels": [
+      1248,
+      1972
+    ],
+    "testDensity": 480,
+    "fontScale": 1.0,
+    "passed": true
+  },
+  {
+    "profile": "fold8-main",
+    "pixels": [
+      2448,
+      1848
+    ],
+    "testDensity": 400,
+    "fontScale": 1.0,
+    "passed": true
+  },
+  {
+    "profile": "fold8-portrait",
+    "pixels": [
+      1848,
+      2448
+    ],
+    "testDensity": 400,
+    "fontScale": 1.0,
+    "passed": true
+  },
+  {
+    "profile": "fold8-ultra-main",
+    "pixels": [
+      2256,
+      2504
+    ],
+    "testDensity": 400,
+    "fontScale": 1.0,
+    "passed": true
+  },
+  {
+    "profile": "flip8-cover-layout-only",
+    "pixels": [
+      948,
+      1048
+    ],
+    "testDensity": 360,
+    "fontScale": 1.0,
+    "passed": true
+  },
+  {
+    "profile": "s26-ultra-large-text",
+    "pixels": [
+      1440,
+      3120
+    ],
+    "testDensity": 560,
+    "fontScale": 1.3,
+    "passed": true
+  }
+]

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="고정된 흰 피사체 뒤로 푸른 색의 리본이 흐르는 yourcolor 앱 아이콘 시안">
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17204b"/>
+      <stop offset="1" stop-color="#26366d"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7bd9ff"/>
+      <stop offset=".43" stop-color="#3d8dff"/>
+      <stop offset="1" stop-color="#7168ee"/>
+    </linearGradient>
+    <linearGradient id="lilac" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d7c9ff"/>
+      <stop offset="1" stop-color="#988fff"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#night)"/>
+  <!-- One continuous field of background color turns downward behind the subject. -->
+  <path d="M56 98c103-26 235-10 322 27 72 31 92 86 63 138-23 42-76 67-84 105-6 29 14 63 63 96H273c-39-48-60-94-52-139 7-40 49-71 54-104 7-38-78-68-219-55Z" fill="url(#flow)"/>
+  <path d="M239 104c68 7 118 20 151 43 49 34 58 70 38 108-22 40-72 68-79 108-4 30 13 62 46 101h-60c-37-49-51-88-46-126 6-43 46-73 57-104 15-39-41-67-107-80Z" fill="url(#lilac)" opacity=".88"/>
+  <!-- The pale, still silhouette stays in front of the stretched color. -->
+  <circle cx="198" cy="202" r="51" fill="#f6f8ff"/>
+  <path d="M111 411c6-77 39-129 87-129s81 52 87 129c-42 31-132 35-174 0Z" fill="#f6f8ff"/>
+</svg>

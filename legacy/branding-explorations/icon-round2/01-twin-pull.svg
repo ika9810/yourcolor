@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Two color ribbons pulled into a smooth pixel stretch">
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2C6DF2"/>
+      <stop offset="1" stop-color="#1755DE"/>
+    </linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F1F8FF"/>
+    </linearGradient>
+    <linearGradient id="back" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#CDEBFF"/>
+      <stop offset="1" stop-color="#A6D2FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="#F7F8FB"/>
+  <rect x="38" y="38" width="436" height="436" rx="114" fill="url(#blue)"/>
+  <path d="M280 119V235C280 304 382 289 382 383" fill="none" stroke="url(#back)" stroke-width="60"/>
+  <path d="M168 119V270C168 323 270 313 270 383" fill="none" stroke="url(#front)" stroke-width="60"/>
+</svg>

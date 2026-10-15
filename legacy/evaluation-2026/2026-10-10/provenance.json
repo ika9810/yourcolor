@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "repo": "menes000/armocromia-12-season",
+    "revision": "a65d0615b24c0d4ba1e8df446f7adcc653a4e501",
+    "split": "test"
+  },
+  "efficientnet": {
+    "repo": "jiwoonkim00/personal-color-classifier",
+    "revision": "7315a0cbf08d5cd1ff9ece69fe0137e4948cb9ee"
+  },
+  "random_forest": {
+    "repo": "mr4/personal-color-ai",
+    "revision": "85d5c30fce46d9471c3131b428bf240c8793d1b8"
+  },
+  "reference_space": {
+    "repo": "mr4/personal-color-analysis",
+    "revision": "ec89f7aa8b3c0b377a025a02420585106e18a5a1"
+  },
+  "assets": {
+    "models/personal_color_ai.onnx": {
+      "bytes": 100276171,
+      "sha256": "08b6ebbf72afc46248c35b36b295b1e8c78f086203e046f51a254b566dd6c80a"
+    },
+    "models/efficientnet.pt": {
+      "bytes": 48649473,
+      "sha256": "d9a1ca4ee775cc1a95e3f520e2e607cea39540fb92dbfbf174a8fb2fcef4a693"
+    },
+    "models/efficientnet.onnx": {
+      "bytes": 16567395,
+      "sha256": "41e1ff8ba629ef3f593615c91558ca775a32380a03cfa6e28eaf3e00afe127ac"
+    },
+    "models/face_parsing.onnx": {
+      "bytes": 53205364,
+      "sha256": "0d9bd318e46987c3bdbfacae9e2c0f461cae1c6ac6ea6d43bbe541a91727e33f"
+    },
+    "sources/mr4-app.js": {
+      "bytes": 650856,
+      "sha256": "5e8dc6424adbd16e2ef0077b3d5b3abc06e72d2777e5af67d07080e20d0e28a1"
+    }
+  }
+}

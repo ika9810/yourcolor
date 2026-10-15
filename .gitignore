@@ -1,4 +1,15 @@
 .DS_Store
+.env
+.env.*
+!.env.example
+**/__pycache__/
+*.pyc
+node_modules/
+*.apk
+*.aab
+*.pem
+*.key
+*.p8
 
 # Native Android local files and generated output
 android/.gradle/

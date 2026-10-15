@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="정사각형 픽셀 하나가 넓게 휘는 리본으로 늘어나는 yourcolor 앱 아이콘 시안">
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#285fe6"/>
+      <stop offset="1" stop-color="#1544bb"/>
+    </linearGradient>
+    <linearGradient id="thread" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fcff"/>
+      <stop offset=".5" stop-color="#c9ebff"/>
+      <stop offset="1" stop-color="#a8b9ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#blue)"/>
+  <!-- A single uninterrupted ribbon grows from the right edge of one square pixel. -->
+  <path d="M208 151c107 3 163 42 160 111-2 51-50 76-65 108-12 25 19 42 97 21l24 70c-124 40-207-7-209-83-2-49 50-81 60-115 10-31-14-49-67-51Z" fill="url(#thread)"/>
+  <rect x="94" y="103" width="138" height="138" rx="10" fill="#f8fcff"/>
+  <path d="M214 162c65 3 100 30 101 80" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" opacity=".55"/>
+</svg>

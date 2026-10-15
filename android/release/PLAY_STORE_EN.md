@@ -1,6 +1,6 @@
 # Google Play listing · English (United States and Canada)
 
-English listing copy for the pixel stretch app. The feature description retains the capabilities already released in version code 4 (2.0.0). The approved title and brand graphics are prepared for version code 6 (2.0.2) in English (United States) and English (Canada); verify publication in Play Console and the public Store. Korean has its own localized listing.
+English listing copy for the pixel stretch app. The feature description retains the capabilities already released in version code 4 (2.0.0). The approved title and brand graphics were published with version code 6 (2.0.2). On October 14, 2026, Play Console showed code 6 in production, and the public Store in the United States and Canada showed version 2.0.2 with the expected title, description, icon, feature graphic, and first localized screenshot. Korean has its own localized listing.
 
 ## App name
 

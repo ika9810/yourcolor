@@ -1,0 +1,335 @@
+{
+  "n": 912,
+  "labels": {
+    "autumn": 259,
+    "spring": 203,
+    "summer": 186,
+    "winter": 264
+  },
+  "majority_baseline": 0.2894736842105263,
+  "metrics": {
+    "efficientnet": {
+      "valid": 912,
+      "correct": 324,
+      "accuracy": 0.35526315789473684,
+      "balanced_accuracy": 0.3166220375967317,
+      "macro_f1": 0.2573073131254825,
+      "recall": {
+        "spring": 0.054187192118226604,
+        "summer": 0.03763440860215054,
+        "autumn": 0.8223938223938224,
+        "winter": 0.3522727272727273
+      },
+      "confusion_matrix": [
+        [
+          11,
+          5,
+          167,
+          20
+        ],
+        [
+          9,
+          7,
+          136,
+          34
+        ],
+        [
+          4,
+          0,
+          213,
+          42
+        ],
+        [
+          3,
+          4,
+          164,
+          93
+        ]
+      ],
+      "confusion_order": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ],
+      "prediction_counts": {
+        "autumn": 680,
+        "winter": 189,
+        "spring": 27,
+        "summer": 16
+      }
+    },
+    "personal_color_ai": {
+      "valid": 912,
+      "correct": 276,
+      "accuracy": 0.3026315789473684,
+      "balanced_accuracy": 0.2991680180570615,
+      "macro_f1": 0.24273202716618086,
+      "recall": {
+        "spring": 0.5123152709359606,
+        "summer": 0.07526881720430108,
+        "autumn": 0.5598455598455598,
+        "winter": 0.04924242424242424
+      },
+      "confusion_matrix": [
+        [
+          104,
+          3,
+          95,
+          1
+        ],
+        [
+          96,
+          14,
+          70,
+          6
+        ],
+        [
+          106,
+          7,
+          145,
+          1
+        ],
+        [
+          64,
+          37,
+          150,
+          13
+        ]
+      ],
+      "confusion_order": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ],
+      "prediction_counts": {
+        "autumn": 460,
+        "spring": 370,
+        "summer": 61,
+        "winter": 21
+      }
+    },
+    "personal_color_ai_sum": {
+      "valid": 912,
+      "correct": 275,
+      "accuracy": 0.30153508771929827,
+      "balanced_accuracy": 0.2968531051818037,
+      "macro_f1": 0.24228319945003532,
+      "recall": {
+        "spring": 0.4876847290640394,
+        "summer": 0.07526881720430108,
+        "autumn": 0.5714285714285714,
+        "winter": 0.05303030303030303
+      },
+      "confusion_matrix": [
+        [
+          99,
+          3,
+          100,
+          1
+        ],
+        [
+          91,
+          14,
+          76,
+          5
+        ],
+        [
+          103,
+          7,
+          148,
+          1
+        ],
+        [
+          66,
+          34,
+          150,
+          14
+        ]
+      ],
+      "confusion_order": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ],
+      "prediction_counts": {
+        "autumn": 474,
+        "spring": 359,
+        "summer": 58,
+        "winter": 21
+      }
+    }
+  },
+  "stability": {
+    "efficientnet": {
+      "images": 120,
+      "images_with_any_change": 35,
+      "any_change_rate": 0.2916666666666667,
+      "by_variant": {
+        "brightness_90": {
+          "n": 120,
+          "changes": 4,
+          "rate": 0.03333333333333333
+        },
+        "brightness_110": {
+          "n": 120,
+          "changes": 3,
+          "rate": 0.025
+        },
+        "warm_4pct": {
+          "n": 120,
+          "changes": 7,
+          "rate": 0.058333333333333334
+        },
+        "cool_4pct": {
+          "n": 120,
+          "changes": 9,
+          "rate": 0.075
+        },
+        "jpeg_75": {
+          "n": 120,
+          "changes": 27,
+          "rate": 0.225
+        }
+      }
+    },
+    "personal_color_ai": {
+      "images": 120,
+      "images_with_any_change": 49,
+      "any_change_rate": 0.4083333333333333,
+      "by_variant": {
+        "brightness_90": {
+          "n": 120,
+          "changes": 24,
+          "rate": 0.2
+        },
+        "brightness_110": {
+          "n": 120,
+          "changes": 11,
+          "rate": 0.09166666666666666
+        },
+        "warm_4pct": {
+          "n": 120,
+          "changes": 18,
+          "rate": 0.15
+        },
+        "cool_4pct": {
+          "n": 120,
+          "changes": 24,
+          "rate": 0.2
+        },
+        "jpeg_75": {
+          "n": 120,
+          "changes": 5,
+          "rate": 0.041666666666666664
+        }
+      }
+    },
+    "personal_color_ai_sum": {
+      "images": 120,
+      "images_with_any_change": 48,
+      "any_change_rate": 0.4,
+      "by_variant": {
+        "brightness_90": {
+          "n": 120,
+          "changes": 17,
+          "rate": 0.14166666666666666
+        },
+        "brightness_110": {
+          "n": 120,
+          "changes": 17,
+          "rate": 0.14166666666666666
+        },
+        "warm_4pct": {
+          "n": 120,
+          "changes": 21,
+          "rate": 0.175
+        },
+        "cool_4pct": {
+          "n": 120,
+          "changes": 22,
+          "rate": 0.18333333333333332
+        },
+        "jpeg_75": {
+          "n": 120,
+          "changes": 9,
+          "rate": 0.075
+        }
+      }
+    }
+  },
+  "versions": {
+    "numpy": "1.26.4",
+    "Pillow": "12.3.0",
+    "onnxruntime": "1.31.0",
+    "mediapipe": "0.10.21",
+    "torch": "2.14.1",
+    "timm": "1.0.30"
+  },
+  "runtime": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.14",
+    "execution_provider": "CPUExecutionProvider",
+    "android_tested": false
+  },
+  "limitations": [
+    "Public masked 224px celebrity photos; not guided Korean user captures or in-person expert diagnoses.",
+    "912 filenames and season labels match the original Deep Armocromia test partition in the independent Lumina feature table; exact checkpoint training membership remains unavailable.",
+    "Personal Color AI numerical feature code reused from pinned author demo; PIL resizing and Python MediaPipe FaceMesh adapter differ from browser implementation.",
+    "Random noise fixed at 0.03 and author fallback weather fixed; noise/weather sensitivity reported separately.",
+    "Neck color fallback used on 694/912 photos; this limits suitability of this dataset for the full 50-feature pipeline.",
+    "EfficientNet tested with public demo six-view TTA; model card training-mask pipeline is incompletely published.",
+    "Synthetic brightness/color/JPEG perturbations do not establish same-person recapture consistency.",
+    "No reliable image-to-person identity mapping established; no per-person metric is reported.",
+    "Local pip check reports MediaPipe 0.10.21 wheel platform compatibility warning; actual import, landmark inference and all benchmark executions succeeded."
+  ],
+  "extraction": {
+    "success": 912,
+    "failed": 0,
+    "iris_detected": 911,
+    "hair_fallback": 35,
+    "neck_fallback": 694
+  },
+  "noise_sweep": {
+    "n": 912,
+    "points": 21,
+    "min": 0.010001,
+    "max": 0.049999,
+    "season_changes": 14,
+    "sub_season_changes": 44,
+    "summed_season_changes": 3
+  },
+  "weather_sweep": {
+    "configurations": [
+      {
+        "uv_index": 0,
+        "cloud_cover": 100,
+        "sun_angle": 0,
+        "ambient_light_condition": 0.1
+      },
+      {
+        "uv_index": 10,
+        "cloud_cover": 0,
+        "sun_angle": 75,
+        "ambient_light_condition": 1.0
+      },
+      {
+        "uv_index": 5,
+        "cloud_cover": 30,
+        "sun_angle": 45,
+        "ambient_light_condition": 0.7
+      }
+    ],
+    "n": 912,
+    "images_with_any_season_change": 53
+  },
+  "skin_audit": {
+    "n": 120,
+    "correct": 37,
+    "demo_correct_on_same_subset": 41,
+    "changed_from_demo": 78,
+    "note": "Diagnostic only: skin and nose retained (BiSeNet classes 1,10); exact training mask code is unavailable"
+  }
+}
